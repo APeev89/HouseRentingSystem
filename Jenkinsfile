@@ -2,16 +2,15 @@ pipeline{
     agent any
     stages{
         stage('Build project'){
-            step{
+            steps {
                 bat 'dotnet build'
             }
         }
         stage('Execute tests'){
-                stage('Run npm audit tests'){
-                    steps{
-                        bat 'dotnet test'
-                    }
-                }
+             steps {
+                bat 'dotnet test'
             }
         }
     }
+}
+    
